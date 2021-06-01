@@ -77,6 +77,12 @@ outputs:
   - GENERATED_VERSION_NAME:
     opts:
       title: "Generated version name"
-      summary: Version name based on the Git repo.
+      summary: Version name based on the Git repo, in X.Y.Z format.
       description: |
-        Version name based on the Git repo.
+        Version name based on the Git repo, in X.Y.Z format.
+  - GENERATED_VERSION_NAME_DETAILED:
+    opts:
+      title: "Generated version name (detailed)"
+      summary: Version name based on the Git repo, with extra clarifications such as "-wip".
+      description: |
+        Version name based on the Git repo, with extra clarifications such as "-wip".
