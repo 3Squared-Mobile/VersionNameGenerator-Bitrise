@@ -56,7 +56,7 @@ else
             # No tags!
             echo "No previous tags to base version on, version will be 0.0.0."
             GENERATED_VERSION_NAME="0.0.0"
-            GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME-wip"
+            GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME-SNAPSHOT"
         else 
             # Split the version number into 3 parts, increment minor.
             IFS='.'
@@ -65,7 +65,7 @@ else
             MINOR="${SPLIT[1]}"
             PATCH="${SPLIT[2]}"
             GENERATED_VERSION_NAME="$MAJOR.$((MINOR + 1)).0"
-            GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME-wip"
+            GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME-SNAPSHOT"
 
             echo "Previous tag is $PREVIOUS, version will increment minor value."
         fi
