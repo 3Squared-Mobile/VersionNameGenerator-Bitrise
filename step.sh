@@ -45,8 +45,7 @@ else
 
         echo "Building a $TYPE branch, version will be $VERSION."
 
-        IFS='-'
-        read -a SPLIT <<< "$VERSION"
+        read -d - -t SPLITTICKET <<< "$VERSION"
         PROJECT = "${SPLIT[0]}"
         TICKET = "${SPLIT[1]}"
 
