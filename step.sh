@@ -45,9 +45,15 @@ else
 
         echo "Building a $TYPE branch, version will be $VERSION."
 
-        read -d - -t SPLITTICKET <<< "$VERSION"
+        IFS='-'
+        read -a SPLITTICKET <<< "$VERSION"
         PROJECT = "${SPLIT[0]}"
         TICKET = "${SPLIT[1]}"
+
+        for (( n=0; n < ${#SPLITTICKET[*]}; n++))
+        do
+          echo "${SPLITTICKET[n]}"
+        done
 
         GENERATED_VERSION_NAME="0.0.0-$PROJECT-$TICKET-SNAPSHOT"
         GENERATED_VERSION_NAME_DETAILED=$GENERATED_VERSION_NAME
