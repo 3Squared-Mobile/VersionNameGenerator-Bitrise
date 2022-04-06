@@ -45,7 +45,12 @@ else
 
         echo "Building a $TYPE branch, version will be $VERSION."
 
-        GENERATED_VERSION_NAME=$VERSION
+        IFS='-'
+        read -a SPLIT <<< "$VERSION"
+        PROJECT = "${SPLIT[0]}"
+        TICKET = "${SPLIT[1]}"
+
+        GENERATED_VERSION_NAME="0.0.0-$PROJECT-$TICKET-SNAPSHOT"
         GENERATED_VERSION_NAME_DETAILED=$GENERATED_VERSION_NAME
     else 
         # If we're building any other branch, we compute a version number based on the previous one.
