@@ -46,7 +46,7 @@ else
         echo "Building a $TYPE branch, version will be $VERSION."
 
         GENERATED_VERSION_NAME=$VERSION
-        GENERATED_VERSION_NAME_DETAILED=$GENERATED_VERSION_NAME
+        GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME - $BRANCH"
     else 
         # If we're building any other branch, we compute a version number based on the previous one.
         echo "Branch is not a release or hotfix ($BRANCH)."
@@ -65,7 +65,7 @@ else
             MINOR="${SPLIT[1]}"
             PATCH="${SPLIT[2]}"
             GENERATED_VERSION_NAME="$MAJOR.$((MINOR + 1)).0"
-            GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME-wip"
+            GENERATED_VERSION_NAME_DETAILED="$GENERATED_VERSION_NAME - $BRANCH"
 
             echo "Previous tag is $PREVIOUS, version will increment minor value."
         fi
