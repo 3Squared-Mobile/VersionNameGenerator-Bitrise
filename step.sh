@@ -36,7 +36,7 @@ if [ "$TAG" != "" ]; then
 else
     echo "Commit is not tagged, generating a version number."
     # If the branch name matches the git flow standard for releases or hotfixes, we can use the 2nd part of the branch name as the version.
-    if [[ $BRANCH == release* || $BRANCH == hotfix* || $BRANCH == feature* ]]; then
+    if [[ $BRANCH == release* || $BRANCH == hotfix* ]]; then
         # Setting the field seperator to / allows us to split the branch name.
         IFS='/'
         read -a SPLIT <<< "$BRANCH"
